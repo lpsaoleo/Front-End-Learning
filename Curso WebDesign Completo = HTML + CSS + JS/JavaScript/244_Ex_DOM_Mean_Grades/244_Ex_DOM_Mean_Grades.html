@@ -13,29 +13,25 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Curso Javascript Completo</h1>
-    </div>
-
-
+   
     <section>
         <div class="container">
 
             <h2>Média dos alunos</h2>
             <table class="table js-tabela">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Nota 1</th>
+                <thead> <!--cabeçalho da tabela-->
+                    <tr> <!--linha-->
+                        <th>Nome</th> <!--coluna 1, linha 1-->
+                        <th>Nota 1</th> <!--th representa uma célula de cabeçalho-->
                         <th>Nota 2</th>
                         <th>Nota 3</th>
                         <th>Nota 4</th>
                         <th>Média</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody> <!--corpo da tabela-->
                     <tr class="aluno">
-                        <td class="aluno-nome">Gertrude</td>
+                        <td class="aluno-nome">Gertrude</td> <!--td representa uma célula de dados no corpo da tabela-->
                         <td class="aluno-n1">10</td>
                         <td class="aluno-n2">8.5</td>
                         <td class="aluno-n3">9</td>
@@ -85,20 +81,27 @@
 
     <script>
 
+        //função auto executável
         (function () {
 
+             //variavel trs recebe os dados da tabela js-tabela, do tbody e da classe aluno
+            //cria uma coleção para cada célula da linha aluno
             var trs = document.querySelectorAll(".js-tabela tbody .aluno");
-
+            
             var x = 0;
-            while(trs[x]){
+            while(trs[x]){ //enquanto ouver colunas no index
+                //uma variavel linhaAluno será criada com esse index
                 var linhaAluno = trs[x];
                 console.log(linhaAluno);
 
+                //cria as variaveis das notas e da média
                 var n1, n2, n3, n4, media;
 
+                //cria a variável tds que armazenará o valor das células naquela linha
                 var tds = linhaAluno.querySelectorAll("td");
                 console.log(tds);
 
+                //cada nota será puxada pela função pega nota, que usará o index como atributo para calcular
                 n1 = pegaNota(tds[1]);
                 n2 = pegaNota(tds[2]);
                 n3 = pegaNota(tds[3]);
@@ -106,11 +109,14 @@
 
                 media = calcularMedia (n1,n2,n3,n4);
 
+                //insere nos campos "aluno-m" o valor calculado da média
                 linhaAluno.querySelector(".aluno-m").textContent = media;
 
+                //acrescenta um ao valor de x, para incrementar o index da função principal e reiniciar o calculo até que todas as linhas sejam completadas
                 x++;
             }
 
+            //a função usará o td como argumento, e converterá ele em float
             function pegaNota(td){
                 return parseFloat(td.textContent);
             }
