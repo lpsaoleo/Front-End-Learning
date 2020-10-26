@@ -11,10 +11,28 @@
             $scope.message = "Hello World!";
         })
     </script>
+
+    <style>
+        .verde{
+            background: red;
+        }
+    </style>
+
+
+
 </head>
-<body>
-    <div ng-controller="helloWorldCtrl">
+<body ng-controller="helloWorldCtrl">
+    <div ng-class="{'verde': 13 *21 +35 -50 < 259}"
+        ng-style="[1,2,3].indexOf(3) == 2 ? {'color': blue} ">
         {{message}}
+
+        <h1>/{{message}}</h1>
+
+        <input type="text" ng-model="yourName">
+        <nome nameTeste="yourName"></nome>
+
+        <span>{{nameTeste}}</span>
+
     </div>
     
 </body>

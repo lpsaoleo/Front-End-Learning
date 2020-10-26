@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Logica de Programação Javascript</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Lógica de programação com Javascript</h1>
+
+    <button onclick="calcular('+')">+</button> <!-- gera um botão no browser, chamando a função "calcular", com atributo "+"-->
+    <button onclick="calcular('-')">-</button>
+    <button onclick="calcular('*')">*</button>
+    <button onclick="calcular('/')">/</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        var n1 = prompt('digite um numero'); //abre uma popup requerendo uma entrada do user
+        n1 = parseInt(n1); //convertendo n1 para uma Int, ja que as entradas sempre serão em string
+
+        escreve(); //executando uma função de nome "escreve"
+
+        function escreve() { //descrevendo o que a função "escreve" faz
+            debugger; //cria um breakpoint no browse para iniciar o debugger
+            console.log('---------'); // imprime no console do browse
+            console.log(n1);
+        }
+
+
+        function calcular(simbolo) { //declarando o que a função calcular faz, utilizando "simbolo", como parâmetro
+            var n = prompt('digite outro numero');
+            n = parseInt(n);
+
+            switch (simbolo) { //switch escolhe qual caso escolher baseado no atributo selecionado
+                case '+': //caso botao "+" for clicado, ele executa o codigo abaixo
+                    n1 = n1 + n;
+                    break;
+                case '-':
+                    n1 = n1 - n;
+                    break;
+                case '*':
+                    n1 = n1 * n;
+                    break;
+                case '/':
+                    n1 = n1 / n;
+            }
+
+            escreve(); //executa a função "escreve" novamente
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

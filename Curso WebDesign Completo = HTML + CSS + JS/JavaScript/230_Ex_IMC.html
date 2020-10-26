@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio IMC</title>
+
+    <script>
+
+        (function() {
+            
+            function calcularImc(peso, altura, callback){
+                var imc = peso / (altura * altura);
+
+                if (callback && typeof callback === "function") {
+                    return callback(imc);
+                }
+                
+                console.log("Não passou callback");
+                return imc;
+            }
+
+            function classificaImc(imc){
+                if (imc <= 16.9){
+                    return "Muito abaixo do peso";
+                }
+                else if (imc <= 18.4){
+                    return "Abaixo do peso";
+                }
+                else if (imc <= 24.9){
+                    return "Normal";
+                }
+                else if (imc <- 29.9){
+                    return "Acima do peso"
+                }
+                else if (imc <= 34.9){
+                    return "Obesidade 1"
+                }
+                else if (imc <= 40) {
+                    return "Obesidade 2"
+                }
+                else{
+                    return "Obesidade mórbida"
+                }
+
+            }
+
+            var peso = 65;
+            var altura = 1.75;
+
+            var imc = calcularImc(peso, altura, classificaImc)
+
+            console.log("IMC: ", imc, classificacao);
+
+
+        })()
+
+       
+
+    </script>
+
+
+</head>
+
+
+
+<body>
+    
+</body>
+</html>

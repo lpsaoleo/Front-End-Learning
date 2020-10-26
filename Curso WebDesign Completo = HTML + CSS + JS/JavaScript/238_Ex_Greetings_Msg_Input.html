@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio de Mensagem de Boas Vindas</title>
+</head>
+<body>
+
+    <p>Qual é o seu nome?</p>
+    <!--input para criar um campo de digitação-->
+    <input type="text" id="txtNome" placeholder="digite seu nome"><button onclick="escreve()">Só clica</button>
+    <!--button para criar um botão clicável-->
+    <div>
+        <!-- onde a mensagem será exibida-->
+        <p id="msg"></p>
+    </div>
+
+    <script>
+        
+        //a variável txtNome2 receberá o valor do input "txtNome"
+        var txtNome2 = document.querySelector("#txtNome");
+
+        function escreve (){
+            // a função escreve é disparada pelo botão e atribui o input a uma variável chamada "nome"
+            var nome = txtNome2.value;
+            //o paragrafo "msg" é entao alterado para a variável "nome"
+            document.querySelector('#msg').innerHTML = "Bem vindo, <b> " + nome + "</b>";
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio de Mensagem de Boas Vindas</title>
+</head>
+<body>
+
+    <p>Qual é o seu nome?</p>
+    
+    <input type="text" id="txtNome" placeholder="digite seu nome" >
+
+    <script>
+        
+        var txt = document.querySelector("#txtNome");
+        var nome = "Luan ";
+        var sobrenome = "Pereira de Souza";
+
+        document.querySelector("#txtNome").value = nome + sobrenome;
+        document.querySelector("#txtNome").disabled = true;
+
+    </script>
+
+</body>
+
+</html>

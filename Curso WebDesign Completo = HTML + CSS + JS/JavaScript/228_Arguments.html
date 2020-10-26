@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JavaScript Completo</title>
+
+    <script>
+
+        function init(){
+            //
+            var isValid = false;
+        }
+
+        init();
+
+        //IIFE, função auto invocável
+        (function(){
+            'use strict'; //essa declaração não permite que uma variável seja alterada dentro da função (sem o var)
+            var isValid = false;
+            isValid = true;
+
+            function somar(arr){
+                console.log(arguments);
+                var result = 0;
+                var x = 0;
+
+                while (argument[x]){ //enquanto tiver itens no array
+                    result += arguments[x]; //o resuktadi será o item que está na posição do array + o valor anterior
+                    x++; //incrementa uma posição no index do array    
+                }
+                console.log("Resultado: ", result);
+            }
+
+            somar(20,20,10,30);
+        })()
+
+        console.log(isValid); //a variavel nao estará disponível, pois está declarada somente dentro da função
+
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

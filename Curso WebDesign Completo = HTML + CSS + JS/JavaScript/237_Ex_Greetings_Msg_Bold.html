@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio de Mensagem de Boas Vindas</title>
+</head>
+<body>
+    
+    <div>
+        <p id="msg"></p>
+    </div>
+
+    <script>
+    
+        (function () {
+            var nome = prompt("Digite seu nome: ");
+            document.querySelector("#msg").innerHTML = "Bem vindo, <b>" + nome + "</b>!";
+            //a propriedade innerHTML faz o interpretador executar como HTML o conteudo
+        })()
+       
+    </script>
+
+</body>
+
+</html>

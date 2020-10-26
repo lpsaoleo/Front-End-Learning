@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio Média de Valor</title>
+
+<script>
+
+     //função auto executável
+    (function(){
+        //a função irá executar sem instanciaçao:
+        function calcularMedia() {
+            var soma = 0;
+            var x = 0;
+
+            while (typeof arguments[x] === 'number') { //enquanto tiver itens no array que forem do tipo "number"
+                soma += arguments[x]; //o resultado será o item que está na posição do array + o valor anterior
+                x++; //incrementa uma posição no index do array    
+            }
+
+            return soma / arguments.length;
+        }
+
+        var media1 = calcularMedia(2, 4);
+        var media2 = calcularMedia(1, 1, 2, 3, 5);
+
+        console.log("media1: ", media1);
+        console.log("media2", media2);
+
+    })()
+       
+    
+        
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>
