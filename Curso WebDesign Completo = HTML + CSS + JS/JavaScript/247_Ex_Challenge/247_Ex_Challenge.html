@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página para ser Hackeada</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+</head>
+<body>
+    
+    <h1>Titulo Inocente da Página</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer condimentum condimentum eros, sit amet euismod nunc
+        interdum vel. Donec cursus mattis nisi eu semper. Mauris malesuada metus sapien, in finibus nisi tincidunt eget.
+        Phasellus vulputate quam ut suscipit vestibulum. Nunc sit amet diam leo. Phasellus et porta turpis, at vulputate massa.
+        Nulla facilisi. Phasellus tristique placerat mollis.
+    </p>
+
+    <p>
+        Vivamus porta cursus euismod. Phasellus libero sem, elementum non faucibus vel, tincidunt at ante. Aliquam orci lacus,
+        consequat in dolor non, malesuada ultrices dolor. Integer maximus tortor odio, in consequat metus porttitor sodales.
+        Etiam imperdiet nibh iaculis velit fermentum sagittis id a leo. Duis vitae risus orci. Cras sit amet purus pellentesque
+        turpis tincidunt eleifend. Donec accumsan fringilla nunc, pretium malesuada eros lacinia vel. Suspendisse urna augue,
+        posuere nec ligula non, molestie pulvinar odio.
+    </p>
+
+    <p>
+        Maecenas sagittis tempor augue id dignissim. Proin quis lectus ultricies, cursus magna sit amet, bibendum quam.
+        Curabitur ullamcorper, est eu viverra interdum, massa arcu ultrices nisl, vel vestibulum justo elit ac lorem. Quisque ac
+        consectetur ex. Nulla non sapien et augue ullamcorper malesuada. Donec euismod justo viverra quam imperdiet consequat.
+        Praesent porta tellus id turpis sodales ultrices. Proin finibus felis et vulputate fringilla. Sed sem sem, laoreet vel
+        tempus vel, feugiat vel dolor. Vivamus finibus enim et velit hendrerit tincidunt. Sed in placerat ipsum. Mauris vel urna
+        sagittis, laoreet ligula et, dignissim est. Aliquam efficitur risus ac viverra sollicitudin. Donec varius est a vehicula
+        vehicula. Cras porta placerat lacinia.
+    </p>
+
+    <p>
+        Nunc nulla nulla, congue vitae urna ac, lobortis imperdiet neque. Sed hendrerit, odio et malesuada ultrices, tellus
+        purus posuere orci, et sodales tellus dolor sit amet ante. Proin semper porttitor lacus, tincidunt malesuada mi bibendum
+        sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras eget egestas
+        turpis. Vivamus molestie a justo ac fermentum. Etiam ultricies turpis felis.
+    </p>
+
+
+
+<script>
+
+    (function () {
+        "use strict";
+       
+        var paragrafos = document.querySelectorAll('p');
+        var titulosH1 = document.querySelectorAll('h1');
+
+        //sempre que houver uma coleção de objetos (selectorAll), será necessário um loop, como abaixo
+        var x = 0;
+        var y = 0;
+        while (paragrafos[x]){
+
+            paragrafos[x].textContent = "Este site foi hackeado por h4Ck3RM4n"
+            x++;
+        }
+
+        while (titulosH1[y]){
+            titulosH1[y].textContent = "Este site foi hackeado por h4Ck3RM4n"
+            y++;
+        }
+
+    })()
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Curso Javascript Completo</title>
+    <meta charset="utf-8">
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+
+    <script src="beluga.js"></script>
+
+</head>
+
+<body>
+   
+    <section>
+        <div class="container">
+
+            <h2>Média dos alunos</h2>
+            <table class="table js-tabela">
+                <thead> <!--cabeçalho da tabela-->
+                    <tr> <!--linha-->
+                        <th>Nome</th> <!--coluna 1, linha 1-->
+                        <th>Nota 1</th> <!--th representa uma célula de cabeçalho-->
+                        <th>Nota 2</th>
+                        <th>Nota 3</th>
+                        <th>Nota 4</th>
+                        <th>Média</th>
+                    </tr>
+                </thead>
+                <tbody> <!--corpo da tabela-->
+                    <tr class="aluno">
+                        <td class="aluno-nome">Gertrude</td> <!--td representa uma célula de dados no corpo da tabela-->
+                        <td class="aluno-n1">10</td>
+                        <td class="aluno-n2">8.5</td>
+                        <td class="aluno-n3">9</td>
+                        <td class="aluno-n4">7.5</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+
+                    <tr class="aluno">
+                        <td class="aluno-nome">Rey</td>
+                        <td class="aluno-n1">5</td>
+                        <td class="aluno-n2">8.5</td>
+                        <td class="aluno-n3">6.5</td>
+                        <td class="aluno-n4">7.5</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+
+                    <tr class="aluno">
+                        <td class="aluno-nome">Jessilda</td>
+                        <td class="aluno-n1">8</td>
+                        <td class="aluno-n2">8.5</td>
+                        <td class="aluno-n3">7</td>
+                        <td class="aluno-n4">7.5</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+
+                    <tr class="aluno">
+                        <td class="aluno-nome">Lindóia</td>
+                        <td class="aluno-n1">6.5</td>
+                        <td class="aluno-n2">8.5</td>
+                        <td class="aluno-n3">10</td>
+                        <td class="aluno-n4">7.5</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="aluno-nome">Creysson</td>
+                        <td class="aluno-n1">10</td>
+                        <td class="aluno-n2">9.5</td>
+                        <td class="aluno-n3">10</td>
+                        <td class="aluno-n4">8.5</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+    <script>
+
+        //função auto executável
+        (function () {
+
+            "use strict";
+
+             //variavel trs recebe os dados da tabela js-tabela, do tbody e da classe aluno
+            //cria uma coleção para cada célula da linha aluno
+            var trs = document.querySelectorAll(".js-tabela tbody .aluno");
+            
+            var x = 0;
+            while(trs[x]){ //enquanto houver colunas no index
+                //uma variavel linhaAluno será criada com esse index
+                var linhaAluno = trs[x];
+             
+                //cria a variável tds que armazenará o valor das células naquela linha
+                var tds = linhaAluno.querySelectorAll("td");
+
+                //a variavel notas armazenará o resultado da função, entrando a variavel tds como argumetno
+                var notas = recuperarNumerosDeColunas(tds);
+               
+                //a variavel média armazenará o resultado da função do calculo da media, aplicando o array das notas como argumento
+                var media = calcularMedia.apply(this, notas);
+
+                //insere nos campos "aluno-m" o valor calculado da média
+                linhaAluno.querySelector(".aluno-m").textContent = media;
+
+                //acrescenta um ao valor de x, para incrementar o index da função principal e reiniciar o calculo até que todas as linhas sejam completadas
+                x++;
+            }
+
+            function recuperarNumerosDeColunas(tds) {
+                var x = 0;
+                //cria um array
+                var arr = [];
+                while(tds[x]){
+                    //se o item puder ser convertido para numero E for diferente de uma string vazia
+                    if(!isNaN(tds[x].textContent) && tds[x].textContent !==""){
+                        //entao o conteúdo naquela posição será incluido no array
+                        arr.push(parseFloat(tds[x].textContent));
+                    }
+                    x++;
+                }
+                //ao final da linha, retornará um array para ela
+                return arr;
+            }
+
+            //a função usará o td como argumento, e converterá ele em float
+            function pegaNota(td){
+                return parseFloat(td.textContent);
+            }
+
+        })()
+
+    </script>
+
+</body>
+
+</html>
