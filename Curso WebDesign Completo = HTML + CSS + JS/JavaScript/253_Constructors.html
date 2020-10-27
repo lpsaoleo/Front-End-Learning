@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //Construtor da Caneta
+       
+        var Caneta = (function (window) {
+            "use strict";
+            function Caneta (preco, cor) {
+
+                //variavel color como privada, pois está no escopo da função
+                var color = cor || "black";
+
+                //publicas
+                this.preco = preco || 1;
+                this.mudarCor = function (cor) {
+                    color = cor;
+                }
+
+                //getter para cor
+                this.pegaCor = function () {
+                    return color;
+                }
+                
+            }
+
+            return Caneta;
+
+        })(window)
+
+    </script>
+
+
+
+</body>
+</html>

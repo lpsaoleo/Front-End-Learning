@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //FORMA 1
+        var pessoa1 = {
+            nome: "Luan",
+            sobrenome: "Pereira de Souza"
+        };
+
+        var pessoa2 = {
+                nome: "José",
+                sobrenome: "Geraldo da Silva"
+        };
+
+        var pessoa3 = {
+            nome: "Maria",
+            sobrenome: "Oliveira Neto"
+        };
+
+        console.log(pessoa1.nome + " " + pessoa1.sobrenome);
+        console.log(pessoa2.nome + " " + pessoa2.sobrenome);
+        console.log(pessoa3.nome + " " + pessoa3.sobrenome);
+
+        //FORMA 2
+        var Pessoa = (function (window) {
+                "use strict";
+                function Pessoa(nome, sobrenome) {
+
+                    //publicas
+                    this.nome = nome;
+                    this.sobrenome = sobrenome;
+
+                }
+
+                return Pessoa;
+
+            })(window)
+
+        var pessoa3 = new Pessoa("Alexandre", "Tacques");
+        var pessoa4 = new Pessoa("Franciele", "Vargas");
+        var pessoa5 = new Pessoa("Julio", "Souza");
+
+        console.log(pessoa3.nome + " " + pessoa3.sobrenome);
+        console.log(pessoa4.nome + " " + pessoa4.sobrenome);
+        console.log(pessoa5.nome + " " + pessoa5.sobrenome);
+
+
+        //FORMA 3
+        var pessoas = [
+            pessoa1,
+            pessoa2,
+            pessoa3
+        ]
+
+        var x = 0
+        while(pessoas[x]){
+            console.log(pessoas[x].nome + " " + pessoas[x].sobrenome)
+            x++;
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
