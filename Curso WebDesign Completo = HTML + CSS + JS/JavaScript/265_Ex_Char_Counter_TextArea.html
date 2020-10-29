@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 264 Contador de Caracteres de um Text Area</title>
+</head>
+
+<body>
+
+    <textarea id='msg' cols='50' rows='10' maxlength="100"></textarea>
+  
+    <div id="restaContainer" style="display:none;"> <span id="resta" style="display:none"></span> caracteres</div>
+
+    <script>
+
+      (function(){
+        "use strict";
+
+        var $txtMsg = document.getElementById('msg');
+        var $resta = document.getElementById("resta");
+        var maxima = $txtMsg.maxLength;
+        var $restaContainer = document.getElementById("restaContainer");
+
+        $resta.textContent = maxima;
+
+        $restaContainer.style.display = "block";
+
+
+        $txtMsg.addEventListener("input", checkLength);
+
+        function checkLength(e){
+           
+           var numLetrasDig = this.value.length;
+           $resta.textContent = maxima - numLetrasDig;
+            
+        }
+
+      })()
+
+    </script>
+
+</body>
+
+</html>

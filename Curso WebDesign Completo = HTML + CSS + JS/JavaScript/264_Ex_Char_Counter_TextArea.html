@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 264 Contador de Caracteres de um Text Area</title>
+</head>
+
+<body>
+
+    <textarea id='msg' cols='50' rows='10'></textarea>
+
+    <script>
+
+      (function(){
+
+        var $txtMsg = document.getElementById('msg');
+
+        $txtMsg.addEventListener("keypress", keypress);
+        $txtMsg.addEventListener("keyup", keyup);
+        $txtMsg.addEventListener("keydown", keydown);
+        $txtMsg.addEventListener("input", input);
+
+        function keypress(e){
+            console.log("keypress", this.value); //keypress só captura teclas de caracteres
+        }
+
+        function keyup(e){
+            console.log("keyup", this.value); //captura quando a tecla é soltada
+        }
+
+        function keydown(e){
+            console.log("keydown", this.value); //captura quando a tecla é pressionada
+        }
+
+        function input(e){
+            console.log("input", this.value); //captura entradas de texto, preferível aos keys
+        }
+
+      })()
+
+    </script>
+
+</body>
+
+</html>

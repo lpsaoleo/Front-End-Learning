@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 262 Validar Formulário de Login</title>
+</head>
+
+<body>
+
+    <form action="#">
+        <label for='txtUser'>Usuário</label><input type="text" id="txtUser" name="user">
+        <label for='txtPass'>Senha</label><input type="password" id="txtPass" name="pass">
+        <button type="button" id="btn">Login</button>
+    </form>
+
+    <script>
+
+        (function(){
+            "user strict";
+            var $txtUser = document.getElementById("txtUser");
+            var $txtPass = document.getElementById("txtPass");
+            var $btn = document.getElementById("btn");
+
+            $btn.addEventListener("click",function(){
+                alert("Clicou no botão");
+
+                if(!$txtUser.value || !$txtPass.value){
+                    alert("Preencha todos os campos");
+                }
+
+            },true);
+
+        })()
+
+    </script>
+
+</body>
+
+</html>
